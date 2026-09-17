@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de implantação — BildS LP</title>
+<style>
+  :root{
+    --navy-900:#06304A; --navy-800:#0B4A70; --teal-500:#2E9FB0; --teal-100:#E4F5F7;
+    --bg:#F7FAFB; --text:#123245; --muted:#5C7A8A; --border:#E1EBEF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;
+    color:var(--text); background:var(--bg); line-height:1.55;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:40px 24px 80px;}
+  header{
+    background:linear-gradient(135deg,var(--navy-900),var(--navy-800));
+    color:#fff; padding:40px 24px; border-radius:0 0 24px 24px; margin-bottom:36px;
+  }
+  header .inner{max-width:820px;margin:0 auto;}
+  header .eyebrow{
+    display:inline-block; font-size:12.5px; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; background:rgba(255,255,255,.12); color:var(--teal-100);
+    padding:6px 14px; border-radius:100px; margin-bottom:14px;
+  }
+  header h1{margin:0 0 10px; font-size:28px;}
+  header p{margin:0; color:rgba(255,255,255,.8); font-size:15px; max-width:560px;}
+  h2{
+    color:var(--navy-900); font-size:21px; margin:0 0 6px; display:flex; align-items:center; gap:10px;
+  }
+  h2 .num{
+    width:30px;height:30px;border-radius:9px;background:var(--teal-500);color:#fff;
+    display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;
+  }
+  .part-sub{color:var(--muted); font-size:14px; margin:0 0 20px 40px;}
+  .card{
+    background:#fff; border:1px solid var(--border); border-radius:16px;
+    padding:28px 30px; margin-bottom:22px; box-shadow:0 6px 20px rgba(11,74,112,0.06);
+  }
+  ol{margin:0; padding-left:22px;}
+  ol li{margin-bottom:14px; font-size:15px;}
+  ol li:last-child{margin-bottom:0;}
+  ol li strong{color:var(--navy-900);}
+  code, .inline-code{
+    background:var(--teal-100); color:var(--navy-800); padding:2px 7px; border-radius:6px;
+    font-family:'Consolas','Monaco',monospace; font-size:13.5px;
+  }
+  pre{
+    background:var(--navy-900); color:#e8f6f8; padding:20px 22px; border-radius:12px;
+    overflow-x:auto; font-size:12.5px; line-height:1.6; font-family:'Consolas','Monaco',monospace;
+  }
+  .callout{
+    background:var(--teal-100); border-left:4px solid var(--teal-500); border-radius:8px;
+    padding:14px 18px; font-size:14px; color:var(--navy-800); margin-top:16px;
+  }
+  .callout.warn{background:#FDEEEB; border-left-color:#D35B47; color:#7A2E1F;}
+  footer{text-align:center; color:var(--muted); font-size:12.5px; margin-top:40px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <span class="eyebrow">BildS Odontologia · LP</span>
+    <h1>Guia de implantação: planilha de leads + publicação no GitHub Pages</h1>
+    <p>Passo a passo pra conectar o formulário da LP a uma planilha do Google Sheets e publicar o site no ar, no mesmo padrão usado na Kibune e na Blanc.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2><span class="num">1</span> Criar a planilha e o Apps Script</h2>
+  <p class="part-sub">Vai registrar cada lead (nome + WhatsApp) automaticamente numa planilha do Google.</p>
+  <div class="card">
+    <ol>
+      <li>Acesse <span class="inline-code">sheets.new</span> pra criar uma planilha do Google Sheets em branco. Renomeie pra algo como <strong>"Leads BildS LP"</strong>.</li>
+      <li>Na linha 1, crie os cabeçalhos, um por coluna: <span class="inline-code">A1: Data e hora</span> · <span class="inline-code">B1: Nome</span> · <span class="inline-code">C1: WhatsApp</span> · <span class="inline-code">D1: Origem</span>.</li>
+      <li>No menu, vá em <strong>Extensões → Apps Script</strong>. Vai abrir um editor de código numa aba nova.</li>
+      <li>Apague o conteúdo padrão (<span class="inline-code">function myFunction(){}</span>) e cole o código abaixo — ele também está no arquivo <span class="inline-code">google-apps-script/Code.gs</span> dentro do zip da LP.</li>
+    </ol>
+    <pre>function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = JSON.parse(e.postData.contents);
+
+    sheet.appendRow([
+      new Date(),
+      data.nome || '',
+      data.whatsapp || '',
+      data.origem || 'LP BildS Odontologia'
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'ok' }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'erro', mensagem: err.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}</pre>
+    <ol start="5">
+      <li>Salve (ícone de disquete ou <span class="inline-code">Ctrl+S</span>) e dê um nome ao projeto, ex: "BildS LP Leads".</li>
+      <li>Clique em <strong>Implantar → Nova implantação</strong>.</li>
+      <li>No ícone de engrenagem ⚙, escolha o tipo <strong>"Aplicativo da Web"</strong>.</li>
+      <li>Configure: <strong>Executar como:</strong> Eu (seu e-mail) · <strong>Quem pode acessar:</strong> <u>Qualquer pessoa</u> (essencial — sem isso o formulário não consegue enviar dados).</li>
+      <li>Clique em <strong>Implantar</strong> e autorize as permissões pedidas (é o seu próprio script, pode confirmar).</li>
+      <li>Copie a <strong>URL do app da Web</strong> gerada (termina em <span class="inline-code">/exec</span>).</li>
+    </ol>
+    <div class="callout warn">
+      Se você editar o código depois de já ter implantado uma vez, é preciso ir em <strong>Implantar → Gerenciar implantações → ícone de lápis → Nova versão → Implantar</strong>. Senão a URL antiga continua rodando o código antigo.
+    </div>
+  </div>
+
+  <h2><span class="num">2</span> Conectar a URL na LP</h2>
+  <div class="card">
+    <ol>
+      <li>Abra o arquivo <span class="inline-code">index.html</span> (dentro da pasta da LP) em qualquer editor de texto.</li>
+      <li>Procure a linha: <span class="inline-code">var SHEETS_WEBAPP_URL = "";</span></li>
+      <li>Cole a URL copiada no passo anterior entre as aspas, assim: <span class="inline-code">var SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/SEU_ID/exec";</span></li>
+      <li>Salve o arquivo.</li>
+    </ol>
+  </div>
+
+  <h2><span class="num">3</span> Publicar no GitHub Pages</h2>
+  <p class="part-sub">Coloca a LP no ar com um link público, gratuito, no mesmo esquema da Kibune e da Blanc.</p>
+  <div class="card">
+    <ol>
+      <li>Extraia (descompacte) o arquivo <span class="inline-code">BildS-LP.zip</span> no seu computador — vai virar uma pasta com o <span class="inline-code">index.html</span> e a pasta <span class="inline-code">assets/</span> dentro.</li>
+      <li>Acesse <span class="inline-code">github.com</span> e faça login com a mesma conta que você já usa (DougLP7).</li>
+      <li>Clique em <strong>New</strong> (ou acesse <span class="inline-code">github.com/new</span>) pra criar um repositório novo.</li>
+      <li>Dê um nome, por exemplo <span class="inline-code">Clinica-BildS</span>. Deixe marcado como <strong>Public</strong> (necessário pro GitHub Pages gratuito) e clique em <strong>Create repository</strong>.</li>
+      <li>Na página do repositório vazio, clique no link azul <strong>"uploading an existing file"</strong>.</li>
+      <li>Arraste para lá <u>todo o conteúdo de dentro</u> da pasta extraída (o <span class="inline-code">index.html</span> e a pasta <span class="inline-code">assets/</span>) — não o .zip em si.</li>
+      <li>Aguarde o upload terminar (os vídeos são maiores, pode levar um minuto) e clique em <strong>Commit changes</strong>.</li>
+      <li>Vá em <strong>Settings → Pages</strong> (menu lateral esquerdo).</li>
+      <li>Em <strong>Source</strong>, selecione a branch <span class="inline-code">main</span> e a pasta <span class="inline-code">/ (root)</span>, depois clique em <strong>Save</strong>.</li>
+      <li>Aguarde 1–2 minutos e atualize a página — o GitHub mostra o link no formato <span class="inline-code">https://douglp7.github.io/Clinica-BildS/</span>.</li>
+    </ol>
+    <div class="callout">
+      Teste o link direto no celular antes de rodar tráfego: confira o formulário, os vídeos e o botão de WhatsApp.
+    </div>
+  </div>
+
+</div>
+
+<footer>BildS Odontologia · Guia gerado junto com a LP</footer>
+</body>
+</html>
