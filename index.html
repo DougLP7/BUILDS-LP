@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BildS Odontologia — Implantes Dentários</title>
+<meta name="description" content="Recupere seu sorriso com implantes dentários planejados com segurança pelo Dr. Humberto Storto (CRO-SP 90.025). Agende sua avaliação individual.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#06304A;
+    --navy-800:#0B4A70;
+    --navy-700:#0E5A85;
+    --teal-500:#2E9FB0;
+    --teal-400:#5CC0CF;
+    --teal-100:#E4F5F7;
+    --bg:#F7FAFB;
+    --white:#FFFFFF;
+    --text:#123245;
+    --muted:#5C7A8A;
+    --border:#E1EBEF;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:10px;
+    --shadow:0 10px 30px rgba(11,74,112,0.10);
+    --shadow-sm:0 4px 14px rgba(11,74,112,0.08);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.font-display{
+    font-family:'Poppins',system-ui,sans-serif;
+    line-height:1.15;
+    margin:0;
+    color:var(--navy-900);
+  }
+  p{margin:0;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+  .section{padding:64px 0;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--teal-500);background:var(--teal-100);
+    padding:7px 14px;border-radius:100px;margin-bottom:16px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:16px;
+    padding:16px 28px;border-radius:100px;border:none;cursor:pointer;
+    text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:linear-gradient(135deg,var(--teal-500),var(--teal-400));
+    color:var(--white);box-shadow:0 10px 24px rgba(46,159,176,.35);
+  }
+  .btn-primary svg{width:20px;height:20px;flex-shrink:0;}
+  .btn-outline{
+    background:transparent;color:var(--navy-800);border:2px solid var(--navy-800);
+  }
+  .microcopy{
+    margin-top:12px;font-size:13px;color:var(--muted);
+    display:flex;align-items:center;gap:6px;justify-content:center;flex-wrap:wrap;
+  }
+  .microcopy .dot{width:6px;height:6px;border-radius:50%;background:var(--teal-500);display:inline-block;}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,250,251,0.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;max-width:1120px;margin:0 auto;
+  }
+  .logo-chip{
+    background:var(--navy-900);border-radius:12px;padding:6px 12px;
+    display:inline-flex;align-items:center;
+  }
+  .logo-chip img{height:32px;width:auto;}
+  .header-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:700;font-size:14px;color:var(--navy-800);
+    padding:10px 18px;border-radius:100px;border:2px solid var(--navy-800);
+    text-decoration:none;
+  }
+  .header-cta svg{width:16px;height:16px;}
+
+  /* HERO */
+  .hero{
+    background:radial-gradient(circle at 15% 0%, var(--teal-100) 0%, var(--bg) 45%);
+    padding:56px 0 40px;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+  }
+  .hero h1{font-size:44px;font-weight:800;letter-spacing:-.01em;}
+  .hero .subhead{
+    margin-top:18px;font-size:18px;line-height:1.6;color:var(--muted);max-width:520px;
+  }
+  .hero-cta{margin-top:32px;}
+  .hero-trust{
+    margin-top:28px;display:flex;gap:22px;flex-wrap:wrap;
+  }
+  .hero-trust-item{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;color:var(--navy-800);}
+  .hero-trust-item svg{width:20px;height:20px;color:var(--teal-500);flex-shrink:0;}
+  .hero-media{position:relative;}
+  .hero-media img{
+    border-radius:var(--radius-lg);box-shadow:var(--shadow);
+    aspect-ratio:4/5;object-fit:cover;width:100%;
+  }
+  .hero-badge{
+    position:absolute;bottom:-18px;left:-18px;
+    background:var(--white);border-radius:var(--radius-md);
+    box-shadow:var(--shadow);padding:14px 18px;
+    display:flex;align-items:center;gap:12px;max-width:250px;
+  }
+  .hero-badge-icon{
+    width:40px;height:40px;border-radius:10px;background:var(--teal-100);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .hero-badge-icon svg{width:22px;height:22px;color:var(--teal-500);}
+  .hero-badge strong{display:block;font-size:13px;color:var(--navy-900);}
+  .hero-badge span{font-size:11.5px;color:var(--muted);}
+
+  /* DOR */
+  .pain{background:var(--white);}
+  .section-head{max-width:640px;margin:0 auto 40px;text-align:center;}
+  .section-head h2{font-size:32px;font-weight:800;}
+  .section-head p{margin-top:14px;font-size:16px;color:var(--muted);line-height:1.6;}
+  .pain-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:860px;margin:0 auto;
+  }
+  .pain-item{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);
+    padding:18px 20px;
+  }
+  .pain-item svg{width:22px;height:22px;color:var(--teal-500);flex-shrink:0;margin-top:2px;}
+  .pain-item p{font-size:15px;line-height:1.5;color:var(--text);}
+
+  /* SOLUÇÃO */
+  .solution{
+    background:linear-gradient(180deg,var(--navy-900),var(--navy-800));
+    color:var(--white);
+  }
+  .solution .section-head h2, .solution .section-head p{color:var(--white);}
+  .solution .section-head p{color:rgba(255,255,255,.78);}
+  .solution-steps{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto;
+  }
+  .step-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius-md);padding:26px 22px;
+  }
+  .step-num{
+    width:34px;height:34px;border-radius:10px;background:var(--teal-500);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;margin-bottom:16px;
+  }
+  .step-card h3{color:var(--white);font-size:17px;margin-bottom:8px;}
+  .step-card p{font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.75);}
+
+  /* VIDEOS */
+  .videos{background:var(--bg);}
+  .video-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:640px;margin:0 auto;
+  }
+  .video-card{
+    position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);
+    aspect-ratio:9/16;background:var(--navy-900);
+  }
+  .video-card video{width:100%;height:100%;object-fit:cover;display:block;}
+  .video-play{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,rgba(6,48,74,0.05),rgba(6,48,74,0.55));
+    cursor:pointer;border:none;padding:0;
+  }
+  .video-play .play-circle{
+    width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.95);
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.25);
+  }
+  .video-play .play-circle svg{width:26px;height:26px;color:var(--navy-800);margin-left:3px;}
+  .video-card.playing .video-play{display:none;}
+  .video-label{
+    position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);
+    color:var(--navy-900);font-size:12px;font-weight:700;padding:6px 12px;border-radius:100px;
+  }
+  .video-card.playing .video-label{display:none;}
+
+  /* BENEFÍCIOS */
+  .benefits{background:var(--white);}
+  .benefits-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:900px;margin:0 auto;
+  }
+  .benefit-item{
+    display:flex;gap:14px;align-items:flex-start;padding:6px 0;
+  }
+  .benefit-check{
+    width:26px;height:26px;border-radius:50%;background:var(--teal-100);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
+  }
+  .benefit-check svg{width:14px;height:14px;color:var(--teal-500);}
+  .benefit-item p{font-size:15px;line-height:1.55;}
+  .benefit-item strong{color:var(--navy-900);}
+
+  /* QUADRO DO DOUTOR */
+  .doctor{background:var(--bg);}
+  .doctor-card{
+    max-width:900px;margin:0 auto;background:var(--white);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);overflow:hidden;display:grid;grid-template-columns:.85fr 1.15fr;
+    border:1px solid var(--border);
+  }
+  .doctor-photo{position:relative;min-height:100%;}
+  .doctor-photo img{width:100%;height:100%;object-fit:cover;min-height:320px;}
+  .doctor-info{padding:36px 40px;display:flex;flex-direction:column;justify-content:center;}
+  .doctor-info .eyebrow{align-self:flex-start;}
+  .doctor-info h3{font-size:24px;margin-bottom:4px;}
+  .doctor-cro{
+    font-size:14px;font-weight:700;color:var(--teal-500);margin-bottom:16px;display:block;
+  }
+  .doctor-info p{font-size:15px;line-height:1.65;color:var(--muted);}
+  .doctor-creds{
+    margin-top:18px;display:flex;flex-direction:column;gap:10px;
+  }
+  .doctor-creds li{
+    list-style:none;display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text);
+  }
+  .doctor-creds svg{width:18px;height:18px;color:var(--teal-500);flex-shrink:0;margin-top:2px;}
+
+  /* GALERIA */
+  .gallery{background:var(--white);}
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  }
+  .gallery-grid figure{margin:0;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);}
+  .gallery-grid img{aspect-ratio:4/5;object-fit:cover;width:100%;transition:transform .3s ease;}
+  .gallery-grid figure:hover img{transform:scale(1.04);}
+
+  /* PROVA SOCIAL */
+  .proof{background:var(--navy-900);color:var(--white);}
+  .proof .section-head h2, .proof .section-head p{color:var(--white);}
+  .proof .section-head p{color:rgba(255,255,255,.75);}
+  .proof-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:820px;margin:0 auto 40px;
+  }
+  .proof-stat{
+    text-align:center;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.3);
+    border-radius:var(--radius-md);padding:22px 14px;
+  }
+  .proof-stat strong{display:block;font-size:26px;font-family:'Poppins',sans-serif;color:var(--teal-400);}
+  .proof-stat span{font-size:12.5px;color:rgba(255,255,255,.65);}
+  .testi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:960px;margin:0 auto;
+  }
+  .testi-card{
+    background:rgba(255,255,255,.05);border:1px dashed rgba(255,255,255,.3);
+    border-radius:var(--radius-md);padding:22px;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.75);
+  }
+  .testi-card .stars{color:var(--teal-400);font-size:14px;margin-bottom:10px;letter-spacing:2px;}
+  .proof-note{
+    text-align:center;margin-top:28px;font-size:12.5px;color:rgba(255,255,255,.5);max-width:520px;margin-left:auto;margin-right:auto;
+  }
+
+  /* OBJEÇÕES */
+  .objections{background:var(--bg);}
+  .obj-grid{display:grid;gap:14px;max-width:760px;margin:0 auto;}
+  .obj-item{
+    background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);
+    padding:20px 24px;
+  }
+  .obj-item .q{font-weight:700;color:var(--navy-900);font-size:15.5px;margin-bottom:6px;display:flex;gap:8px;}
+  .obj-item .q .mark{color:var(--teal-500);}
+  .obj-item .a{font-size:14.5px;line-height:1.6;color:var(--muted);}
+
+  /* GARANTIA */
+  .guarantee{background:var(--white);}
+  .guarantee-card{
+    max-width:760px;margin:0 auto;display:flex;gap:24px;align-items:flex-start;
+    background:var(--teal-100);border-radius:var(--radius-lg);padding:32px 36px;
+  }
+  .guarantee-icon{
+    width:56px;height:56px;border-radius:14px;background:var(--teal-500);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .guarantee-icon svg{width:28px;height:28px;color:var(--white);}
+  .guarantee-card h3{font-size:19px;margin-bottom:8px;}
+  .guarantee-card p{font-size:14.5px;line-height:1.65;color:var(--navy-800);}
+
+  /* FAQ */
+  .faq{background:var(--bg);}
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+  .faq-item{
+    background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;
+  }
+  .faq-q{
+    width:100%;text-align:left;padding:18px 22px;background:none;border:none;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:15px;color:var(--navy-900);
+  }
+  .faq-q svg{width:18px;height:18px;color:var(--teal-500);flex-shrink:0;transition:transform .2s ease;}
+  .faq-item.open .faq-q svg{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{padding:0 22px 20px;font-size:14.5px;line-height:1.6;color:var(--muted);}
+
+  /* CTA FINAL / FORM */
+  .final-cta{
+    background:linear-gradient(135deg,var(--navy-900),var(--navy-700));
+    color:var(--white);
+  }
+  .final-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  .final-cta h2{color:var(--white);font-size:32px;font-weight:800;}
+  .final-cta p.lead{margin-top:14px;font-size:16px;color:rgba(255,255,255,.78);line-height:1.6;}
+  .final-trust{margin-top:24px;display:flex;flex-direction:column;gap:10px;}
+  .final-trust-item{display:flex;gap:10px;align-items:center;font-size:14px;color:rgba(255,255,255,.85);}
+  .final-trust-item svg{width:18px;height:18px;color:var(--teal-400);flex-shrink:0;}
+
+  .form-card{
+    background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);
+    padding:32px;color:var(--text);
+  }
+  .form-card h3{font-size:19px;color:var(--navy-900);margin-bottom:6px;}
+  .form-card .form-sub{font-size:13.5px;color:var(--muted);margin-bottom:22px;display:block;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:13px;font-weight:700;color:var(--navy-900);margin-bottom:7px;}
+  .field input{
+    width:100%;padding:14px 16px;border-radius:var(--radius-sm);border:1.5px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:15px;background:var(--bg);color:var(--text);
+    transition:border-color .15s ease;
+  }
+  .field input:focus{outline:none;border-color:var(--teal-500);background:var(--white);}
+  .field .error{display:none;color:#c0392b;font-size:12.5px;margin-top:6px;}
+  .field.invalid input{border-color:#c0392b;}
+  .field.invalid .error{display:block;}
+  .form-card .btn{width:100%;margin-top:6px;}
+  .form-note{
+    margin-top:14px;font-size:12px;color:var(--muted);text-align:center;line-height:1.5;
+  }
+
+  /* FOOTER */
+  footer{background:var(--navy-900);color:rgba(255,255,255,.65);padding:36px 0;}
+  .footer-inner{
+    display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;
+  }
+  .footer-inner .logo-chip{margin-bottom:0;}
+  footer .foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+  footer a{text-decoration:none;color:rgba(255,255,255,.65);}
+  footer a:hover{color:var(--white);}
+
+  /* WHATSAPP FLOAT */
+  .wa-float{
+    position:fixed;bottom:22px;right:22px;z-index:60;
+    width:58px;height:58px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.25);
+    text-decoration:none;
+  }
+  .wa-float svg{width:30px;height:30px;color:var(--white);}
+
+  @media (max-width:860px){
+    .hero-grid, .final-grid{grid-template-columns:1fr;}
+    .hero-media{order:-1;}
+    .hero h1{font-size:32px;}
+    .solution-steps, .doctor-card{grid-template-columns:1fr;}
+    .doctor-photo img{min-height:260px;}
+    .pain-grid, .benefits-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .proof-stats, .testi-grid{grid-template-columns:1fr;}
+    .section{padding:48px 0;}
+    .header-cta span{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-chip"><img src="assets/img/logo-bilds.jpg" alt="BildS Odontologia"></div>
+    <a class="header-cta" href="#form" id="headerCta">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.11-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.43-4.4-1.18l-.32-.19-3.03.79.81-2.95-.2-.3A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+      <span>Agendar avaliação</span>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Implantodontia · BildS Odontologia</span>
+      <h1>Seu sorriso completo de novo — com implantes planejados pra durar, do jeito certo desde a primeira consulta</h1>
+      <p class="subhead">Avaliação individual, plano de tratamento explicado com clareza e acompanhamento do Dr. Humberto Storto (CRO-SP 90.025) em cada etapa — pra você voltar a sorrir, mastigar e falar sem se preocupar.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#form">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.11-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.43-4.4-1.18l-.32-.19-3.03.79.81-2.95-.2-.3A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+          Quero agendar minha avaliação
+        </a>
+        <p class="microcopy"><span class="dot"></span>Atendimento direto pelo WhatsApp<span class="dot"></span>Resposta rápida</p>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          Responsável técnico: Dr. Humberto Storto
+        </div>
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.8 6.5 19.5l1-6.3L3 8.9 9 8z"/></svg>
+          Especialização em Implantodontia
+        </div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="assets/img/clinica-recepcao-1.jpg" alt="Recepção da BildS Odontologia">
+      <div class="hero-badge">
+        <div class="hero-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.8 6.5 19.5l1-6.3L3 8.9 9 8z"/></svg>
+        </div>
+        <div>
+          <strong>CRO-SP 90.025</strong>
+          <span>Dr. Humberto Storto · Implantodontia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="section pain">
+  <div class="container">
+    <div class="section-head">
+      <h2>Você reconhece alguma dessas situações?</h2>
+      <p>Antes de falar sobre tratamento, a gente entende o que você já vive no dia a dia.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <p>Perdeu um ou mais dentes e passou a evitar sorrir ou aparecer em fotos</p>
+      </div>
+      <div class="pain-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <p>Sente dificuldade pra mastigar direito e já mudou o que come por causa disso</p>
+      </div>
+      <div class="pain-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <p>Usa (ou pensa em usar) prótese removível e não se sente confortável com ela</p>
+      </div>
+      <div class="pain-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <p>Tem receio de procurar um dentista por causa de experiências ruins no passado</p>
+      </div>
+      <div class="pain-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <p>Já pesquisou sobre implante, mas ficou com dúvidas sobre dor, prazo ou processo</p>
+      </div>
+      <div class="pain-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <p>Adia o tratamento há meses (ou anos) porque não sabe por onde começar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÃO -->
+<section class="section solution">
+  <div class="container">
+    <div class="section-head">
+      <h2>Um caminho claro, da avaliação ao sorriso pronto</h2>
+      <p>Sem termos técnicos difíceis e sem decisão às pressas — você entende cada etapa antes de seguir pra próxima.</p>
+    </div>
+    <div class="solution-steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Avaliação individual</h3>
+        <p>Você conversa direto com o Dr. Humberto sobre sua situação, seu histórico e o que te incomoda hoje.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Plano de tratamento explicado</h3>
+        <p>Você recebe um plano pensado pra sua boca, apresentado com clareza — sem letras miúdas.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Acompanhamento em cada etapa</h3>
+        <p>Do planejamento à conclusão, o acompanhamento é feito com o Dr. Humberto, sob sua responsabilidade técnica (CRO-SP 90.025).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VÍDEOS -->
+<section class="section videos">
+  <div class="container">
+    <div class="section-head">
+      <h2>Conheça a BildS com o Dr. Humberto</h2>
+      <p>Toque para assistir e entender como funciona o cuidado por trás de cada tratamento.</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card" id="videoCard1">
+        <span class="video-label">▶ Assista</span>
+        <video id="video1" src="assets/video/video-1.mp4" poster="assets/img/video-1-poster.jpg" playsinline controls preload="metadata"></video>
+        <button class="video-play" aria-label="Reproduzir vídeo 1" onclick="playVideo('videoCard1','video1')">
+          <span class="play-circle">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </button>
+      </div>
+      <div class="video-card" id="videoCard2">
+        <span class="video-label">▶ Assista</span>
+        <video id="video2" src="assets/video/video-2.mp4" poster="assets/img/video-2-poster.jpg" playsinline controls preload="metadata"></video>
+        <button class="video-play" aria-label="Reproduzir vídeo 2" onclick="playVideo('videoCard2','video2')">
+          <span class="play-circle">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="section benefits">
+  <div class="container">
+    <div class="section-head">
+      <h2>O que muda no seu dia a dia</h2>
+      <p>Mais do que um procedimento, um conjunto de mudanças reais na sua rotina.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>Mastigar sem dor</strong> — comer o que quiser, sem pensar duas vezes antes de cada garfada</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>Sorrir sem esconder a boca</strong> em fotos, vídeos ou conversas</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>Falar com mais firmeza</strong>, sem o desconforto de dentes soltos ou próteses que se movem</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>Plano de tratamento em linguagem simples</strong>, sem termos técnicos difíceis</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>Acompanhamento direto com o Dr. Humberto</strong> em cada etapa, não com "quem estiver disponível"</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>Ambiente pensado pra reduzir a ansiedade</strong> de quem tem receio de dentista</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>Previsibilidade</strong> — você sabe os próximos passos antes de decidir qualquer coisa</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUADRO DO DOUTOR -->
+<section class="section doctor">
+  <div class="container">
+    <div class="doctor-card">
+      <div class="doctor-photo">
+        <img src="assets/img/dr-humberto.jpg" alt="Dr. Humberto Luis Storto">
+      </div>
+      <div class="doctor-info">
+        <span class="eyebrow">Responsável técnico</span>
+        <h3>Dr. Humberto Luis Storto</h3>
+        <span class="doctor-cro">CRO-SP 90.025</span>
+        <p>Dentista responsável técnico da BildS Odontologia, com atuação focada em reabilitação oral por meio de implantes dentários.</p>
+        <ul class="doctor-creds">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+            Graduação em Odontologia — Uninove (2005)
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.8 6.5 19.5l1-6.3L3 8.9 9 8z"/></svg>
+            Especialização em Implantodontia (2022)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="section gallery">
+  <div class="container">
+    <div class="section-head">
+      <h2>Conheça a estrutura da clínica</h2>
+      <p>Um ambiente clean, pensado pra deixar sua visita mais tranquila.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure><img src="assets/img/clinica-recepcao-1.jpg" alt="Recepção BildS Odontologia"></figure>
+      <figure><img src="assets/img/clinica-recepcao-2.jpg" alt="Recepção BildS Odontologia"></figure>
+      <figure><img src="assets/img/clinica-consultorio-1.jpg" alt="Consultório BildS Odontologia"></figure>
+      <figure><img src="assets/img/clinica-consultorio-2.jpg" alt="Consultório BildS Odontologia"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="section proof">
+  <div class="container">
+    <div class="section-head">
+      <h2>Quem já passou pela BildS</h2>
+      <p>Espaço reservado pra números e depoimentos reais — atualize antes de publicar a campanha.</p>
+    </div>
+    <div class="proof-stats">
+      <div class="proof-stat"><strong>[INSERIR Nº]</strong><span>implantes realizados</span></div>
+      <div class="proof-stat"><strong>[INSERIR Nº]</strong><span>anos de atuação do Dr. Humberto</span></div>
+      <div class="proof-stat"><strong>[INSERIR Nº]</strong><span>avaliação média dos pacientes</span></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        [INSERIR DEPOIMENTO DE PACIENTE — foco no resultado: ex. voltou a mastigar sem dor]
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        [INSERIR DEPOIMENTO DE PACIENTE — foco na confiança no atendimento do Dr. Humberto]
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        [INSERIR DEPOIMENTO DE PACIENTE — foco na experiência sem dor/ansiedade]
+      </div>
+    </div>
+    <p class="proof-note">Depoimentos e números devem ser coletados e autorizados pelos pacientes antes da publicação da campanha.</p>
+  </div>
+</section>
+
+<!-- OBJEÇÕES -->
+<section class="section objections">
+  <div class="container">
+    <div class="section-head">
+      <h2>Ainda com alguma dúvida?</h2>
+      <p>Separamos as perguntas que mais ouvimos antes da primeira consulta.</p>
+    </div>
+    <div class="obj-grid">
+      <div class="obj-item">
+        <p class="q"><span class="mark">"Mas vai doer muito..."</span></p>
+        <p class="a">O procedimento é feito com controle de conforto e cada etapa é explicada antes de acontecer — você sabe o que esperar em cada momento.</p>
+      </div>
+      <div class="obj-item">
+        <p class="q"><span class="mark">"Mas eu já tentei resolver de outro jeito e não deu certo..."</span></p>
+        <p class="a">O plano de tratamento é individual, pensado pra sua boca e pro seu histórico — não é um modelo pronto aplicado igual pra todo mundo.</p>
+      </div>
+      <div class="obj-item">
+        <p class="q"><span class="mark">"Mas tenho receio de ir ao dentista..."</span></p>
+        <p class="a">O ambiente e o atendimento foram pensados pra reduzir a ansiedade de quem já teve experiências ruins — sem pressa e com explicação clara antes de qualquer procedimento.</p>
+      </div>
+      <div class="obj-item">
+        <p class="q"><span class="mark">"Mas não sei se sou candidato a implante..."</span></p>
+        <p class="a">É exatamente isso que a avaliação individual responde — o Dr. Humberto analisa seu caso específico antes de qualquer indicação.</p>
+      </div>
+      <div class="obj-item">
+        <p class="q"><span class="mark">"Mas não sei quanto vai custar..."</span></p>
+        <p class="a">O plano de tratamento e os valores são apresentados com clareza antes de qualquer decisão — você avalia com calma, sem compromisso na avaliação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="section guarantee">
+  <div class="container">
+    <div class="guarantee-card">
+      <div class="guarantee-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div>
+        <h3>Transparência do início ao fim</h3>
+        <p>Todo tratamento começa com uma avaliação individual e um plano apresentado antes de qualquer decisão, sob responsabilidade técnica do Dr. Humberto Storto (CRO-SP 90.025). Você entende exatamente o que será feito, etapa por etapa, antes de dizer sim.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq">
+  <div class="container">
+    <div class="section-head">
+      <h2>Perguntas frequentes</h2>
+      <p>Se ainda ficou alguma dúvida, é só chamar no WhatsApp.</p>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q">Colocar implante dói? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>O procedimento é feito com controle de conforto, e cada etapa é explicada antes de acontecer. Na avaliação, o Dr. Humberto esclarece exatamente como funciona no seu caso.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quanto tempo dura o tratamento? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Varia de acordo com cada caso — número de implantes, condição óssea e planejamento. Isso é definido junto com você na avaliação, com prazo explicado com clareza.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Qualquer pessoa pode colocar implante? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>A avaliação individual existe justamente pra responder isso com segurança — o Dr. Humberto analisa seu histórico e sua condição antes de qualquer indicação.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como funciona a primeira consulta? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Você conversa direto com o Dr. Humberto sobre sua situação, ele avalia seu caso e te explica os próximos passos com clareza — sem "juridiquês odontológico".</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">E se eu já tiver perdido o dente há muito tempo? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Sem problema — isso também é avaliado individualmente. Cada caso tem um planejamento próprio, feito pra sua condição atual.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como funciona o atendimento pelo WhatsApp? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>É só preencher seu nome e WhatsApp aqui na página que você já é direcionado direto pra conversa com a BildS Odontologia, sem burocracia.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL / FORM -->
+<section class="section final-cta" id="form">
+  <div class="container final-grid">
+    <div>
+      <span class="eyebrow" style="background:rgba(46,159,176,.18);color:var(--teal-400);">Dê o primeiro passo</span>
+      <h2>Seu sorriso de volta começa com uma conversa</h2>
+      <p class="lead">Preencha seus dados e fale agora com a BildS Odontologia pelo WhatsApp. É rápido e direto com a clínica.</p>
+      <div class="final-trust">
+        <div class="final-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          Avaliação individual com o Dr. Humberto Storto (CRO-SP 90.025)
+        </div>
+        <div class="final-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          Plano de tratamento explicado com clareza, sem pressa
+        </div>
+        <div class="final-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          Atendimento direto com a clínica pelo WhatsApp
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>Agende sua avaliação</h3>
+      <span class="form-sub">Preencha abaixo e você será redirecionado direto pro WhatsApp da BildS Odontologia.</span>
+      <form id="leadForm" novalidate>
+        <div class="field" id="fieldName">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="name">
+          <span class="error">Digite seu nome pra continuar.</span>
+        </div>
+        <div class="field" id="fieldWhats">
+          <label for="whatsapp">WhatsApp (com DDD)</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 90000-0000" autocomplete="tel" inputmode="tel">
+          <span class="error">Digite um número de WhatsApp válido com DDD.</span>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.11-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.43-4.4-1.18l-.32-.19-3.03.79.81-2.95-.2-.3A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+          Falar com a BildS no WhatsApp
+        </button>
+        <p class="form-note">Ao enviar, você será direcionado ao WhatsApp da clínica ((11) 95303-1020) pra continuar o atendimento.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="logo-chip"><img src="assets/img/logo-bilds.jpg" alt="BildS Odontologia"></div>
+    <div class="foot-links">
+      <a href="https://wa.me/5511953031020" target="_blank" rel="noopener">WhatsApp: (11) 95303-1020</a>
+      <a href="#form">Agendar avaliação</a>
+      <span>Dr. Humberto Luis Storto · CRO-SP 90.025</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5511953031020?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20BildS%20Odontologia%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.11-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.43-4.4-1.18l-.32-.19-3.03.79.81-2.95-.2-.3A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+</a>
+
+<script>
+  // ===== CONFIGURAÇÃO =====
+  var CLINIC_WHATSAPP = "5511953031020"; // (11) 95303-1020 em formato internacional
+  // Cole aqui a URL do seu Web App do Google Apps Script (igual usado na Kibune/Blanc)
+  // para registrar os leads numa planilha do Google Sheets antes do redirecionamento.
+  var SHEETS_WEBAPP_URL = ""; // ex: "https://script.google.com/macros/s/XXXXX/exec"
+
+  // ===== VÍDEOS =====
+  function playVideo(cardId, videoId){
+    var card = document.getElementById(cardId);
+    var video = document.getElementById(videoId);
+    card.classList.add('playing');
+    video.play();
+  }
+
+  // ===== FAQ ACCORDION =====
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    var answer = item.querySelector('.faq-a');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem){
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ===== FORMULÁRIO =====
+  var form = document.getElementById('leadForm');
+  var nomeInput = document.getElementById('nome');
+  var whatsInput = document.getElementById('whatsapp');
+  var fieldName = document.getElementById('fieldName');
+  var fieldWhats = document.getElementById('fieldWhats');
+  var submitBtn = document.getElementById('submitBtn');
+
+  whatsInput.addEventListener('input', function(){
+    var v = whatsInput.value.replace(/\D/g,'').slice(0,11);
+    var out = v;
+    if(v.length > 2) out = '(' + v.slice(0,2) + ') ' + v.slice(2);
+    if(v.length > 7) out = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+    whatsInput.value = out;
+  });
+
+  function digitsOnly(str){ return (str || '').replace(/\D/g,''); }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nome = nomeInput.value.trim();
+    var whatsDigits = digitsOnly(whatsInput.value);
+
+    var valid = true;
+    if(nome.length < 3){
+      fieldName.classList.add('invalid'); valid = false;
+    } else { fieldName.classList.remove('invalid'); }
+
+    if(whatsDigits.length < 10 || whatsDigits.length > 11){
+      fieldWhats.classList.add('invalid'); valid = false;
+    } else { fieldWhats.classList.remove('invalid'); }
+
+    if(!valid) return;
+
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+
+    // Registro opcional em planilha (Google Sheets via Apps Script)
+    if(SHEETS_WEBAPP_URL){
+      try{
+        fetch(SHEETS_WEBAPP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({
+            nome: nome,
+            whatsapp: whatsDigits,
+            origem: 'LP BildS Odontologia',
+            data: new Date().toISOString()
+          })
+        });
+      }catch(err){ /* segue o fluxo mesmo se falhar o registro */ }
+    }
+
+    var mensagem = "Olá! Meu nome é " + nome + " e quero agendar minha avaliação de implante na BildS Odontologia.";
+    var url = "https://wa.me/" + CLINIC_WHATSAPP + "?text=" + encodeURIComponent(mensagem);
+
+    setTimeout(function(){
+      window.location.href = url;
+    }, 300);
+  });
+</script>
+
+</body>
+</html>
