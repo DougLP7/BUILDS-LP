@@ -145,7 +145,18 @@
   }
   .hero-visual::before{
     content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(90deg, #F3F9FC 0%, #F3F9FC 1%, rgba(243,249,252,.85) 3%, rgba(243,249,252,.55) 5.5%, rgba(243,249,252,.25) 8%, rgba(243,249,252,.08) 10%, rgba(243,249,252,0) 12%);
+    background:linear-gradient(90deg,
+      #F3F9FC 0%,
+      rgba(243,249,252,.97) 3%,
+      rgba(243,249,252,.9) 6%,
+      rgba(243,249,252,.78) 9%,
+      rgba(243,249,252,.6) 12%,
+      rgba(243,249,252,.4) 16%,
+      rgba(243,249,252,.24) 20%,
+      rgba(243,249,252,.12) 25%,
+      rgba(243,249,252,.05) 31%,
+      rgba(243,249,252,.015) 37%,
+      rgba(243,249,252,0) 44%);
   }
 
   /* DOR */
@@ -346,6 +357,18 @@
   .final-trust{margin-top:24px;display:flex;flex-direction:column;gap:10px;}
   .final-trust-item{display:flex;gap:10px;align-items:center;font-size:14px;color:rgba(255,255,255,.85);}
   .final-trust-item svg{width:18px;height:18px;color:var(--teal-400);flex-shrink:0;}
+  .clinic-address{
+    margin-top:28px;display:flex;gap:14px;align-items:flex-start;
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    border-radius:var(--radius-md);padding:18px 20px;
+  }
+  .clinic-address svg{width:24px;height:24px;color:var(--teal-400);flex-shrink:0;margin-top:2px;}
+  .clinic-address strong{display:block;color:var(--white);font-size:14.5px;font-weight:700;margin-bottom:4px;}
+  .clinic-address span{display:block;font-size:14px;line-height:1.55;color:rgba(255,255,255,.8);}
+  .clinic-address a{
+    display:inline-block;margin-top:8px;font-size:13.5px;font-weight:700;color:var(--teal-400);text-decoration:none;
+  }
+  .clinic-address a:hover{text-decoration:underline;}
 
   .form-card{
     background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);
@@ -418,7 +441,15 @@
       position:relative;width:auto;top:auto;right:auto;bottom:auto;
     }
     .hero-visual::before{
-      background:linear-gradient(180deg, rgba(243,249,252,0) 0%, rgba(243,249,252,0) 90%, rgba(243,249,252,.5) 95%, #F3F9FC 100%);
+      background:linear-gradient(180deg,
+        rgba(243,249,252,0) 0%,
+        rgba(243,249,252,0) 62%,
+        rgba(243,249,252,.06) 70%,
+        rgba(243,249,252,.16) 77%,
+        rgba(243,249,252,.32) 84%,
+        rgba(243,249,252,.55) 90%,
+        rgba(243,249,252,.8) 95%,
+        #F3F9FC 100%);
     }
     .video-stack{max-width:280px;height:420px;}
     .video-card.primary{width:220px;}
@@ -697,6 +728,14 @@
           Atendimento direto com a clínica pelo WhatsApp
         </div>
       </div>
+      <div class="clinic-address">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <strong>Onde fica a clínica</strong>
+          <span>Avenida Trindade, 254 – Cj 918, Office Bethaville<br>Bethaville, Barueri – SP</span>
+          <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Trindade%2C+254+-+Office+Bethaville%2C+Bethaville%2C+Barueri+-+SP" target="_blank" rel="noopener">Ver no mapa →</a>
+        </div>
+      </div>
     </div>
 
     <div class="form-card">
@@ -731,6 +770,7 @@
       <a href="https://wa.me/5511953031020" target="_blank" rel="noopener">WhatsApp: (11) 95303-1020</a>
       <a href="#form" class="js-open-modal">Agendar avaliação</a>
       <span>Dr. Humberto Luis Storto · CRO-SP 90.025</span>
+      <span>Av. Trindade, 254 – Cj 918, Office Bethaville, Barueri – SP</span>
     </div>
   </div>
 </footer>
