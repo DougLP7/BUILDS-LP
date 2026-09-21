@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>BildS Odontologia — Implantes Dentários</title>
 <meta name="description" content="Recupere seu sorriso com implantes dentários planejados com segurança pelo Dr. Humberto Storto (CRO-SP 90.025). Agende sua avaliação individual.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,8 @@
     --shadow:0 10px 30px rgba(11,74,112,0.10);
     --shadow-sm:0 4px 14px rgba(11,74,112,0.08);
   }
-  *{box-sizing:border-box;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;
@@ -78,7 +79,7 @@
   /* HEADER */
   header{
     position:sticky;top:0;z-index:50;
-    background:rgba(247,250,251,0.92);backdrop-filter:blur(8px);
+    background:rgba(247,250,251,0.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
     border-bottom:1px solid var(--border);
   }
   .header-inner{
@@ -104,7 +105,7 @@
     overflow:hidden;
   }
   .hero-grid{
-    display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:620px;
+    display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:720px;
   }
   .hero-content{
     padding:56px 6vw;display:flex;flex-direction:column;justify-content:center;
@@ -231,7 +232,7 @@
   .video-close{
     position:absolute;top:12px;right:12px;z-index:6;display:none;
     width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
-    background:rgba(6,48,74,.55);backdrop-filter:blur(2px);
+    background:rgba(6,48,74,.55);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
     align-items:center;justify-content:center;color:var(--white);
   }
   .video-close svg{width:16px;height:16px;}
@@ -316,7 +317,7 @@
   .testi-photo{position:relative;aspect-ratio:16/10;overflow:hidden;}
   .testi-photo img{width:100%;height:100%;object-fit:cover;display:block;}
   .testi-photo-tag{
-    position:absolute;bottom:10px;left:10px;background:rgba(6,48,74,.75);backdrop-filter:blur(2px);
+    position:absolute;bottom:10px;left:10px;background:rgba(6,48,74,.75);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
     color:var(--white);font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
     padding:5px 10px;border-radius:100px;
   }
@@ -391,8 +392,8 @@
   .field label{display:block;font-size:13px;font-weight:700;color:var(--navy-900);margin-bottom:7px;}
   .field input{
     width:100%;padding:14px 16px;border-radius:var(--radius-sm);border:1.5px solid var(--border);
-    font-family:'Inter',sans-serif;font-size:15px;background:var(--bg);color:var(--text);
-    transition:border-color .15s ease;
+    font-family:'Inter',sans-serif;font-size:16px;background:var(--bg);color:var(--text);
+    transition:border-color .15s ease;-webkit-appearance:none;appearance:none;
   }
   .field input:focus{outline:none;border-color:var(--teal-500);background:var(--white);}
   .field .error{display:none;color:#c0392b;font-size:12.5px;margin-top:6px;}
@@ -415,7 +416,7 @@
 
   /* WHATSAPP FLOAT */
   .wa-float{
-    position:fixed;bottom:22px;right:22px;z-index:60;
+    position:fixed;bottom:calc(22px + env(safe-area-inset-bottom));right:calc(22px + env(safe-area-inset-right));z-index:60;
     width:58px;height:58px;border-radius:50%;background:#25D366;
     display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.25);
     text-decoration:none;
@@ -447,7 +448,7 @@
   @media (max-width:860px){
     .hero-grid, .final-grid{grid-template-columns:1fr;}
     .hero-grid{min-height:0;}
-    .hero-visual{order:-1;min-height:320px;}
+    .hero-visual{order:-1;min-height:480px;}
     .hero-visual::before{
       background:linear-gradient(180deg, rgba(6,48,74,0) 55%, rgba(243,249,252,.55) 88%, #F3F9FC 100%);
     }
@@ -513,41 +514,6 @@
   </div>
 </section>
 
-<!-- DOR -->
-<section class="section pain">
-  <div class="container">
-    <div class="section-head">
-      <h2>Você reconhece alguma dessas situações?</h2>
-      <p>Antes de falar sobre tratamento, a gente entende o que você já vive no dia a dia.</p>
-    </div>
-    <div class="pain-grid">
-      <div class="pain-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        <p>Perdeu um ou mais dentes e passou a evitar sorrir ou aparecer em fotos</p>
-      </div>
-      <div class="pain-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        <p>Sente dificuldade pra mastigar direito e já mudou o que come por causa disso</p>
-      </div>
-      <div class="pain-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        <p>Usa (ou pensa em usar) prótese removível e não se sente confortável com ela</p>
-      </div>
-      <div class="pain-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        <p>Tem receio de procurar um dentista por causa de experiências ruins no passado</p>
-      </div>
-      <div class="pain-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        <p>Já pesquisou sobre implante, mas ficou com dúvidas sobre dor, prazo ou processo</p>
-      </div>
-      <div class="pain-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        <p>Adia o tratamento há meses (ou anos) porque não sabe por onde começar</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- SOLUÇÃO -->
 <section class="section solution">
@@ -743,38 +709,6 @@
       </div>
     </div>
     <p class="proof-note">Fotos ilustrativas — substitua pelos casos reais da BildS, com autorização dos pacientes, antes de publicar a campanha.</p>
-  </div>
-</section>
-
-<!-- OBJEÇÕES -->
-<section class="section objections">
-  <div class="container">
-    <div class="section-head">
-      <h2>Ainda com alguma dúvida?</h2>
-      <p>Separamos as perguntas que mais ouvimos antes da primeira consulta.</p>
-    </div>
-    <div class="obj-grid">
-      <div class="obj-item">
-        <p class="q"><span class="mark">"Mas vai doer muito..."</span></p>
-        <p class="a">O procedimento é feito com controle de conforto e cada etapa é explicada antes de acontecer — você sabe o que esperar em cada momento.</p>
-      </div>
-      <div class="obj-item">
-        <p class="q"><span class="mark">"Mas eu já tentei resolver de outro jeito e não deu certo..."</span></p>
-        <p class="a">O plano de tratamento é individual, pensado pra sua boca e pro seu histórico — não é um modelo pronto aplicado igual pra todo mundo.</p>
-      </div>
-      <div class="obj-item">
-        <p class="q"><span class="mark">"Mas tenho receio de ir ao dentista..."</span></p>
-        <p class="a">O ambiente e o atendimento foram pensados pra reduzir a ansiedade de quem já teve experiências ruins — sem pressa e com explicação clara antes de qualquer procedimento.</p>
-      </div>
-      <div class="obj-item">
-        <p class="q"><span class="mark">"Mas não sei se sou candidato a implante..."</span></p>
-        <p class="a">É exatamente isso que a avaliação individual responde — o Dr. Humberto analisa seu caso específico antes de qualquer indicação.</p>
-      </div>
-      <div class="obj-item">
-        <p class="q"><span class="mark">"Mas não sei quanto vai custar..."</span></p>
-        <p class="a">O plano de tratamento e os valores são apresentados com clareza antes de qualquer decisão — você avalia com calma, sem compromisso na avaliação.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1012,6 +946,21 @@
     setTimeout(function(){ window.location.href = url; }, 300);
   }
 
+  // ===== TRACKING DE LEAD (Google Ads / GTM) =====
+  // Só deve disparar DEPOIS que o formulário foi validado com sucesso (nome + WhatsApp
+  // válidos) e o cadastro foi enviado — nunca em cliques nos botões que apenas abrem o
+  // modal ("Agendar avaliação" etc.), pra evitar contar qualquer clique como lead.
+  // No GTM, a tag de conversão do Google Ads deve usar um gatilho de Evento
+  // Personalizado (Custom Event) = lead_whatsapp, e não um gatilho de clique em
+  // classe/seletor CSS (que dispararia em qualquer botão com a mesma classe).
+  window.dataLayer = window.dataLayer || [];
+  function pushLeadEvent(origem){
+    window.dataLayer.push({
+      event: 'lead_whatsapp',
+      lead_origem: origem || 'LP BildS Odontologia'
+    });
+  }
+
   function setupLeadForm(formId, nomeId, whatsId, fieldNameId, fieldWhatsId, submitBtnId){
     var form = document.getElementById(formId);
     if(!form) return;
@@ -1043,6 +992,7 @@
       submitBtn.style.opacity = '0.7';
 
       sendToSheets(nome, whatsDigits);
+      pushLeadEvent('LP BildS Odontologia — ' + formId);
       redirectToWhatsApp(nome);
     });
   }
